@@ -1,38 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Work Day Scheduler</title>
-  </head>
 
-  <body>
-    <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
-      <p id="currentDay" class="lead"></p>
-    </header>
-    <div class="container">
-      <!-- Timeblocks go here -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/style.css" />
+  <title>Work Day Scheduler</title>
+</head>
+
+<body>
+  <header class="p-5 mb-2 bg-light">
+    <h1 class="display-3">Work Day Scheduler</h1>
+    <p class="lead">A simple calendar app for scheduling your work day</p>
+    <p id="currentDay" class="lead"></p>
+  </header>
+  <div class="container">
+    <div id="time-9" class="time-block row p-4">
+      <div class="hour col">9:00 AM</div>
+      <input type="text" class="description task col-9"></input>
+      <button class="saveBtn col">Save</button>
     </div>
+    <div id="time-10" class="time-block row p-4">
+      <div class="hour col">10:00 AM</div>
+      <input type="text" class="description task col-9"></input>
+      <button class="saveBtn col">Save</button>
+    </div>
+    <div id="time-11" class="time-block row p-4">
+      <div class="hour col">11:00 AM</div>
+      <input type="text" class="description task col-9"></input>
+      <button class="saveBtn col">Save</button>
+    </div>
+    <div id="time-12" class="time-block row p-4">
+      <div class="hour col">12:00 PM</div>
+      <input type="text" class="description task col-9"></input>
+      <button class="saveBtn col">Save</button>
+    </div>
+    <div id="time-13" class="time-block row p-4">
+      <div class="hour col">1:00 PM</div>
+      <input type="text" class="description task col-9"></input>
+      <button class="saveBtn col">Save</button>
+    </div>
+    <div id="time-14" class="time-block row p-4">
+      <div class="hour col">2:00 PM</div>
+      <input type="text" class="description task col-9"></input>
+      <button class="saveBtn col">Save</button>
+    </div>
+    <div id="time-15" class="time-block row p-4">
+      <div class="hour col">3:00 PM</div>
+      <input type="text" class="description task col-9"></input>
+      <button class="saveBtn col">Save</button>
+    </div>
+    <div id="time-16" class="time-block row p-4">
+      <div class="hour col">4:00 PM</div>
+      <input type="text" class="description task col-9"></input>
+      <button class="saveBtn col">Save</button>
+    </div>
+    <div id="time-17" class="time-block row p-4">
+      <div class="hour col">5:00 PM</div>
+      <input type="text" class="description task col-9"></input>
+      <button class="saveBtn col">Save</button>
+    </div>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  </body>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+</body>
+
 </html>
