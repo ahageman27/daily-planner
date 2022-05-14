@@ -1,29 +1,45 @@
 var currentTimeEl = $("#currentDay");
 var timeSlotsEl = $(".time-slots");
-var timeBlockEl = document.querySelectorAll(".time-block");
+var timeBlockEl = $(".time-block");
 var hourSlotEl = $(".hour");
 var taskSlotEl = $(".task");
 var saveBtnEl = $(".saveBtn");
 
-var i = 0;
-var now = moment();
-console.log(timeBlockEl);
+var now = moment().utcOffset(10);
+
 setInterval(() => {
-    now = moment();
+    now = moment().utcOffset(10);
     currentTimeEl.text(now.format('MMMM Do YYYY, h:mm:ss a'));
 }, 1000);
-for (var i = 0; i < timeBlockEl.length; i++) {
-    console.log(timeBlockEl[i])
-    if (timeBlockEl[i].id < now.format("HH")) {
-        console.log("here");
-        timeBlockEl[i].addClass("past");
-        timeBlockEl[i].removeClass("present")
+
+timeBlockEl.each(function () {
+    if (this.id < now.format("HH")) {
+        $(this).children().eq(1).addClass("past");
+        $(this).children().eq(1).removeClass("future present")
     }
-    else if (timeBlockEl[i].id == now.format("HH")) {
-        timeBlockEl[i].addClass("present");
-        timeBlockEl[i].removeClass("future");
+    else if (this.id === now.format("HH")) {
+        $(this).children().eq(1).addClass("present");
+        $(this).children().eq(1).removeClass("future past");
     }
-    else {
-        timeBlockEl[i].addClass("future");
+    else if (this.id > now.format("HH")) {
+        $(this).children().eq(1).addClass("future");
+        $(this).children().eq(1).removeClass("present past");
     }
+});
+
+function writeTasks() {
+    taskSlotEl.each(function () {
+        var task = localStorage.getItem($(this).attr("id"));
+        $(this).val(task);
+    })
 }
+writeTasks();
+
+function saveTask(event) {
+    event.preventDefault();
+    var taskSlot = $(event.target).siblings().eq(1);
+    var task = taskSlot.val();
+    localStorage.setItem(taskSlot.attr("id"), task);
+}
+
+saveBtnEl.on("click", saveTask);
