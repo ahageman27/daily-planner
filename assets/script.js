@@ -5,10 +5,10 @@ var hourSlotEl = $(".hour");
 var taskSlotEl = $(".task");
 var saveBtnEl = $(".saveBtn");
 
-var now = moment().utcOffset(10);
+var now = moment();
 
 setInterval(() => {
-    now = moment().utcOffset(10);
+    now = moment();
     currentTimeEl.text(now.format('MMMM Do YYYY, h:mm:ss a'));
 }, 1000);
 
